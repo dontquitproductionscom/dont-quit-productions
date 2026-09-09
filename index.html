@@ -1,0 +1,115 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Don't Quit Productions | Chicago Sketch, Improv &amp; Variety</title>
+<meta name="description" content="Don't Quit Productions creates and produces sketch, improv, and variety shows in Chicago, giving independent artists a stage they wouldn't otherwise get.">
+<link rel="icon" href="/assets/img/dqp-mark.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=Space+Grotesk:wght@400;500;700&family=Permanent+Marker&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+
+<header class="site-header">
+  <div class="wrap nav">
+    <a href="/" class="nav__logo"><img src="/assets/img/dqp-lockup-horizontal-cropped.png" alt="Don't Quit Productions"></a>
+    <button class="nav__toggle" aria-label="Toggle menu"><span></span><span></span><span></span></button>
+    <ul class="nav__links">
+      <li><a href="/" class="is-active">Home</a></li>
+      <li><a href="/productions.html">Productions</a></li>
+      <li><a href="/gallery.html">Gallery</a></li>
+      <li><a href="/about.html">About / Contact</a></li>
+      <li><a href="/staff.html">Staff</a></li>
+    </ul>
+  </div>
+</header>
+
+<section class="hero">
+  <div class="wrap">
+    <span class="hero__eyebrow" id="hero-eyebrow">Chicago sketch · improv · variety</span>
+    <h1 id="hero-title">Don't <span>Quit</span></h1>
+    <p class="hero__sub" id="hero-sub">
+      We create and produce the best and brightest sketch, improv, and variety shows in Chicago,
+      and give independent artists a stage they wouldn't otherwise get.
+    </p>
+    <div class="hero__ctas">
+      <a href="/productions.html" class="btn btn-red">See Current Shows</a>
+      <a href="/about.html" class="btn btn-mint">Pitch a Show</a>
+    </div>
+  </div>
+</section>
+
+<div class="marquee">
+  <div class="marquee__track" id="marquee-track">Loading shows <span>&bull;</span></div>
+</div>
+
+<section>
+  <div class="wrap">
+    <div class="section-head">
+      <div>
+        <span class="eyebrow">On stage now</span>
+        <h2>Current Production</h2>
+      </div>
+    </div>
+    <div class="spotlight" id="spotlight">
+      <div class="spotlight__poster"></div>
+      <div><p>Loading current show…</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="section--navy">
+  <div class="wrap mission">
+    <div>
+      <span class="eyebrow" id="mission-eyebrow">Our mission</span>
+      <h2 id="mission-title">Everyone can be funny.</h2>
+      <p class="mt-2" id="mission-body">
+        At Don't Quit Productions, we empower independent artists by giving them opportunities to
+        showcase their talent on platforms not typically accessible.
+      </p>
+      <a href="/about.html" class="btn btn-blue">More About Us</a>
+    </div>
+    <div>
+      <div class="mission__stat">100%</div>
+      <p>independent, artist-first, and always looking for the next spectacular idea.</p>
+    </div>
+  </div>
+</section>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <div class="footer-top">
+      <h2>Got a show in you? Let's make it happen.</h2>
+      <ul class="footer-links">
+        <li><a href="/">Home</a></li>
+        <li><a href="/productions.html">Productions</a></li>
+        <li><a href="/gallery.html">Gallery</a></li>
+        <li><a href="/about.html">About / Contact</a></li>
+        <li><a href="/staff.html">Staff</a></li>
+      </ul>
+    </div>
+    <div class="footer-bottom">
+      <span>Don't Quit Productions • Since 2024</span>
+      <div class="footer-links" id="social-links"></div>
+      <span>&copy; <span id="footer-year"></span> Don't Quit Productions</span>
+    </div>
+  </div>
+</footer>
+
+<script src="/js/main.js"></script>
+<script src="/js/home.js"></script>
+<script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
+<script>
+  if (window.netlifyIdentity) {
+    window.netlifyIdentity.on("init", user => {
+      if (!user) {
+        window.netlifyIdentity.on("login", () => { document.location.href = "/admin/"; });
+      }
+    });
+  }
+</script>
+</body>
+</html>

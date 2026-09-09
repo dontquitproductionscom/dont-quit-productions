@@ -1,0 +1,94 @@
+backend:
+  name: git-gateway
+  branch: main
+
+media_folder: "assets/img/uploads"
+public_folder: "/assets/img/uploads"
+
+collections:
+  - name: "shows"
+    label: "Shows"
+    files:
+      - file: "content/shows.json"
+        label: "Shows List"
+        name: "shows"
+        fields:
+          - label: "Shows"
+            name: "shows"
+            widget: "list"
+            summary: "{{title}} ({{year}})"
+            fields:
+              - { label: "Title", name: "title", widget: "string" }
+              - { label: "Tagline", name: "tagline", widget: "string" }
+              - { label: "Venue", name: "venue", widget: "string" }
+              - { label: "Dates (shown as typed)", name: "dates", widget: "string" }
+              - { label: "Year", name: "year", widget: "select", options: ["2024", "2025", "2026", "2027"] }
+              - label: "Status"
+                name: "status"
+                widget: "select"
+                options:
+                  - { label: "Now Playing", value: "live" }
+                  - { label: "Coming Soon", value: "soon" }
+                  - { label: "Past Run", value: "past" }
+              - { label: "Poster Image", name: "poster", widget: "image" }
+              - { label: "Ticket URL", name: "ticketUrl", widget: "string", required: false }
+
+  - name: "staff"
+    label: "Staff"
+    files:
+      - file: "content/staff.json"
+        label: "Staff List"
+        name: "staff"
+        fields:
+          - label: "Staff"
+            name: "staff"
+            widget: "list"
+            summary: "{{name}} • {{role}}"
+            fields:
+              - { label: "Name", name: "name", widget: "string" }
+              - { label: "Role", name: "role", widget: "string" }
+              - { label: "Bio", name: "bio", widget: "text" }
+              - { label: "Photo", name: "photo", widget: "image" }
+
+  - name: "gallery"
+    label: "Gallery"
+    files:
+      - file: "content/gallery.json"
+        label: "Gallery Photos"
+        name: "gallery"
+        fields:
+          - label: "Photos"
+            name: "photos"
+            widget: "list"
+            summary: "{{caption}}"
+            fields:
+              - { label: "Photo", name: "image", widget: "image" }
+              - { label: "Caption", name: "caption", widget: "string", required: false }
+
+  - name: "settings"
+    label: "Site Settings"
+    files:
+      - file: "content/site.json"
+        label: "Homepage & About Copy"
+        name: "site"
+        fields:
+          - { label: "Hero Eyebrow", name: "heroEyebrow", widget: "string" }
+          - { label: "Hero Title (HTML allowed, e.g. Don't <span>Quit</span>)", name: "heroTitle", widget: "string" }
+          - { label: "Hero Subtext", name: "heroSub", widget: "text" }
+          - { label: "Mission Eyebrow", name: "missionEyebrow", widget: "string" }
+          - { label: "Mission Title", name: "missionTitle", widget: "string" }
+          - { label: "Mission Body", name: "missionBody", widget: "text" }
+          - { label: "Pitch Title", name: "pitchTitle", widget: "string" }
+          - { label: "Pitch Body", name: "pitchBody", widget: "text" }
+          - { label: "Support Eyebrow", name: "supportEyebrow", widget: "string" }
+          - { label: "Support Title", name: "supportTitle", widget: "string" }
+          - { label: "Support Body", name: "supportBody", widget: "text" }
+          - { label: "Support Button Label", name: "supportButtonLabel", widget: "string" }
+          - label: "Support / Donate URL"
+            name: "supportUrl"
+            widget: "string"
+            required: false
+            hint: "Paste your PayPal.me / Venmo / Stripe Payment Link / Ko-fi link here once you've set one up. Leave blank to hide the button's real destination for now."
+          - { label: "Instagram URL", name: "instagram", widget: "string", required: false }
+          - { label: "TikTok URL", name: "tiktok", widget: "string", required: false }
+          - { label: "YouTube URL", name: "youtube", widget: "string", required: false }

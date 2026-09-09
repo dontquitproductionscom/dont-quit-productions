@@ -1,0 +1,33 @@
+[build]
+  publish = "."
+
+# Keep old links from the previous site working after the switch.
+[[redirects]]
+  from = "/about"
+  to = "/about.html"
+  status = 301
+
+[[redirects]]
+  from = "/productions"
+  to = "/productions.html"
+  status = 301
+
+[[redirects]]
+  from = "/2024productions"
+  to = "/productions.html"
+  status = 301
+
+[[redirects]]
+  from = "/2025productions"
+  to = "/productions.html"
+  status = 301
+
+[[redirects]]
+  from = "/2026productions"
+  to = "/productions.html"
+  status = 301
+
+[[redirects]]
+  from = "/staff"
+  to = "/staff.html"
+  status = 301

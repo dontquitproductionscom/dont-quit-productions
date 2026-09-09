@@ -1,0 +1,34 @@
+{
+  "shows": [
+    {
+      "title": "Set In Chicago",
+      "tagline": "Spooky Movie Sequels, Improvised",
+      "venue": "de Maat Studio Theater @ Second City",
+      "dates": "Thursdays, Oct 1-29 · 7:30pm",
+      "year": "2026",
+      "status": "live",
+      "poster": "/assets/img/dqp-mark-cropped.png",
+      "ticketUrl": "#"
+    },
+    {
+      "title": "Sample Show Title",
+      "tagline": "Replace this with your show's tagline",
+      "venue": "Venue name",
+      "dates": "Day, Month-Month · Time",
+      "year": "2025",
+      "status": "past",
+      "poster": "/assets/img/dqp-mark-cropped.png",
+      "ticketUrl": "#"
+    },
+    {
+      "title": "Sample Show Title",
+      "tagline": "Add your 2024 shows here via the CMS",
+      "venue": "Venue name",
+      "dates": "Day, Month-Month · Time",
+      "year": "2024",
+      "status": "past",
+      "poster": "/assets/img/dqp-mark-cropped.png",
+      "ticketUrl": "#"
+    }
+  ]
+}

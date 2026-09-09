@@ -1,0 +1,16 @@
+{
+  "staff": [
+    {
+      "name": "Your Name Here",
+      "role": "Founder / Artistic Director",
+      "bio": "Add a short bio via the CMS (Staff collection).",
+      "photo": "/assets/img/dqp-mark-cropped.png"
+    },
+    {
+      "name": "Team Member",
+      "role": "Producer",
+      "bio": "Add a short bio via the CMS (Staff collection).",
+      "photo": "/assets/img/dqp-mark-cropped.png"
+    }
+  ]
+}

@@ -1,0 +1,10 @@
+{
+  "photos": [
+    { "caption": "Add your first photo via the CMS", "image": "/assets/img/dqp-mark-cropped.png" },
+    { "caption": "Replace this placeholder", "image": "/assets/img/dqp-mark-cropped.png" },
+    { "caption": "Replace this placeholder", "image": "/assets/img/dqp-mark-cropped.png" },
+    { "caption": "Replace this placeholder", "image": "/assets/img/dqp-mark-cropped.png" },
+    { "caption": "Replace this placeholder", "image": "/assets/img/dqp-mark-cropped.png" },
+    { "caption": "Replace this placeholder", "image": "/assets/img/dqp-mark-cropped.png" }
+  ]
+}

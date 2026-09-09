@@ -117,7 +117,7 @@ body { min-height: 100vh; }
       <li><a data-page="productions" onclick="goTo('productions')">Productions</a></li>
       <li><a data-page="gallery" onclick="goTo('gallery')">Gallery</a></li>
       <li><a data-page="about" onclick="goTo('about')">About / Contact</a></li>
-      <li><a data-page="staff" onclick="goTo('staff')">Founders</a></li>
+      <li><a data-page="staff" onclick="goTo('staff')">Staff</a></li>
     </ul>
   </div>
 </header>
@@ -273,7 +273,7 @@ body { min-height: 100vh; }
   <section class="page-hero">
     <div class="wrap">
       <span class="eyebrow">Founder-run, artist-first</span>
-      <h1>Founders</h1>
+      <h1>Staff</h1>
       <p>Two people, one mission: give independent artists a stage they wouldn't otherwise get.</p>
     </div>
   </section>
@@ -294,7 +294,7 @@ body { min-height: 100vh; }
         <li><a onclick="goTo('productions')">Productions</a></li>
         <li><a onclick="goTo('gallery')">Gallery</a></li>
         <li><a onclick="goTo('about')">About / Contact</a></li>
-        <li><a onclick="goTo('staff')">Founders</a></li>
+        <li><a onclick="goTo('staff')">Staff</a></li>
       </ul>
     </div>
     <div class="footer-bottom">

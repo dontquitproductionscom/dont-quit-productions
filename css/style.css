@@ -462,26 +462,51 @@ section { padding: clamp(3rem, 7vw, 5rem) 0; }
 .form-note a { text-decoration: underline; }
 
 /* ===========================================================
-   Staff grid
+   Founders (small, founder-run team — feature layout, not a directory grid)
 =========================================================== */
-.staff-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+.founders {
+  display: flex;
+  flex-direction: column;
   gap: var(--gap);
 }
-.staff-card { text-align: left; }
-.staff-card__photo {
+.founder {
+  display: grid;
+  grid-template-columns: minmax(200px, 280px) 1fr;
+  gap: clamp(1.5rem, 4vw, 2.5rem);
+  align-items: start;
+  background: var(--cream);
+  color: var(--navy);
+  border: 3px solid var(--navy);
+  border-radius: 28px;
+  padding: clamp(1.5rem, 4vw, 2.5rem);
+  box-shadow: 8px 8px 0 var(--navy);
+}
+.founder:nth-of-type(2n) { background: var(--mint); }
+.founder__photo {
   aspect-ratio: 1;
-  border-radius: 22px;
+  border-radius: 20px;
   overflow: hidden;
   border: 3px solid var(--navy);
-  background: var(--mint);
-  margin-bottom: 0.85rem;
+  background: var(--skyblue);
 }
-.staff-card__photo img { width: 100%; height: 100%; object-fit: cover; }
-.staff-card__name { font-family: var(--font-display); font-size: 1.3rem; text-transform: uppercase; }
-.staff-card__role { font-family: var(--font-marker); color: var(--red); margin-bottom: 0.4rem; display: inline-block; transform: rotate(-2deg); }
-.staff-card__bio { font-size: 0.92rem; opacity: 0.85; }
+.founder__photo img { width: 100%; height: 100%; object-fit: cover; }
+.founder__name { font-family: var(--font-display); font-size: clamp(1.6rem, 3vw, 2.2rem); text-transform: uppercase; margin-bottom: 0.3rem; }
+.founder__role {
+  font-family: var(--font-marker);
+  color: var(--red);
+  display: inline-block;
+  transform: rotate(-2deg);
+  margin-bottom: 1rem;
+}
+.founder__bio {
+  font-size: 1rem;
+  line-height: 1.65;
+  white-space: pre-line;
+}
+@media (max-width: 640px) {
+  .founder { grid-template-columns: 1fr; }
+  .founder__photo { max-width: 200px; }
+}
 
 /* ===========================================================
    Photo gallery

@@ -1,23 +1,26 @@
-// Staff page: renders the team grid from content/staff.json.
+// Staff page: renders the founders from content/staff.json as a feature
+// layout (not a directory grid — this is a two-person, founder-run team).
 document.addEventListener('DOMContentLoaded', async () => {
-  const gridEl = document.getElementById('staff-grid');
-  if (!gridEl) return;
+  const listEl = document.getElementById('founders-list');
+  if (!listEl) return;
 
   try {
     const { staff } = await fetchJSON('/content/staff.json');
     if (!staff.length) {
-      gridEl.innerHTML = `<div class="empty-state">Add your team in the CMS (Staff collection).</div>`;
+      listEl.innerHTML = `<div class="empty-state">Add your team in the CMS (Staff collection).</div>`;
       return;
     }
-    gridEl.innerHTML = staff.map(p => `
-      <div class="staff-card">
-        <div class="staff-card__photo"><img src="${p.photo}" alt="${p.name}" loading="lazy"></div>
-        <div class="staff-card__name">${p.name}</div>
-        <span class="staff-card__role">${p.role}</span>
-        <p class="staff-card__bio">${p.bio}</p>
+    listEl.innerHTML = staff.map(p => `
+      <div class="founder">
+        <div class="founder__photo"><img src="${p.photo}" alt="${p.name}" loading="lazy"></div>
+        <div>
+          <div class="founder__name">${p.name}</div>
+          <span class="founder__role">${p.role}</span>
+          <p class="founder__bio">${p.bio}</p>
+        </div>
       </div>
     `).join('');
   } catch (e) {
-    gridEl.innerHTML = `<div class="empty-state">Couldn't load the team right now.</div>`;
+    listEl.innerHTML = `<div class="empty-state">Couldn't load the team right now.</div>`;
   }
 });

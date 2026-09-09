@@ -39,13 +39,15 @@ const socials = [
 ].filter(s => site[s.key]);
 const socialLinksHTML = socials.map(s => `<a href="${site[s.key]}" target="_blank" rel="noopener" aria-label="${s.label}">${s.icon}</a>`).join('');
 
-function staffCard(p) {
+function founderCard(p) {
   return `
-      <div class="staff-card">
-        <div class="staff-card__photo"><img src="${MARK_URI}" alt="${p.name}" loading="lazy"></div>
-        <div class="staff-card__name">${p.name}</div>
-        <span class="staff-card__role">${p.role}</span>
-        <p class="staff-card__bio">${p.bio}</p>
+      <div class="founder">
+        <div class="founder__photo"><img src="${MARK_URI}" alt="${p.name}" loading="lazy"></div>
+        <div>
+          <div class="founder__name">${p.name}</div>
+          <span class="founder__role">${p.role}</span>
+          <p class="founder__bio">${p.bio}</p>
+        </div>
       </div>`;
 }
 
@@ -115,7 +117,7 @@ body { min-height: 100vh; }
       <li><a data-page="productions" onclick="goTo('productions')">Productions</a></li>
       <li><a data-page="gallery" onclick="goTo('gallery')">Gallery</a></li>
       <li><a data-page="about" onclick="goTo('about')">About / Contact</a></li>
-      <li><a data-page="staff" onclick="goTo('staff')">Staff</a></li>
+      <li><a data-page="staff" onclick="goTo('staff')">Founders</a></li>
     </ul>
   </div>
 </header>
@@ -266,17 +268,18 @@ body { min-height: 100vh; }
   </section>
 </div>
 
-<!-- ============ STAFF ============ -->
+<!-- ============ FOUNDERS ============ -->
 <div class="page-section" id="page-staff">
   <section class="page-hero">
     <div class="wrap">
-      <span class="eyebrow">The people behind the shows</span>
-      <h1>Staff</h1>
+      <span class="eyebrow">Founder-run, artist-first</span>
+      <h1>Founders</h1>
+      <p>Two people, one mission: give independent artists a stage they wouldn't otherwise get.</p>
     </div>
   </section>
   <section style="padding-top:0;">
     <div class="wrap">
-      <div class="staff-grid">${staff.staff.map(staffCard).join('')}
+      <div class="founders">${staff.staff.map(founderCard).join('')}
       </div>
     </div>
   </section>
@@ -291,7 +294,7 @@ body { min-height: 100vh; }
         <li><a onclick="goTo('productions')">Productions</a></li>
         <li><a onclick="goTo('gallery')">Gallery</a></li>
         <li><a onclick="goTo('about')">About / Contact</a></li>
-        <li><a onclick="goTo('staff')">Staff</a></li>
+        <li><a onclick="goTo('staff')">Founders</a></li>
       </ul>
     </div>
     <div class="footer-bottom">

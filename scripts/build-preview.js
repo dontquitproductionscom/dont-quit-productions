@@ -23,7 +23,7 @@ const MARK_URI = `data:image/png;base64,${markB64}`;
 const shows = showsData.shows;
 const current = shows.find(s => s.status === 'live') || shows[0];
 const currentStatusLabel = { live: 'Now Playing', soon: 'Coming Soon', past: 'Recent Run' }[current.status] || 'Featured';
-const marqueeNames = [...shows.map(s => s.title)];
+const marqueeNames = [...new Set(shows.map(s => s.title))];
 const marqueeLooped = [...marqueeNames, ...marqueeNames, ...marqueeNames].map(n => `${n} <span>&bull;</span>`).join(' ');
 
 const ICON_PIN = '<svg class="meta-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s7-7.58 7-13a7 7 0 1 0-14 0c0 5.42 7 13 7 13z"/><circle cx="12" cy="9" r="2.5"/></svg>';

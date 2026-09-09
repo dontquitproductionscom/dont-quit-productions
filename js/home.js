@@ -39,7 +39,7 @@ document.addEventListener('DOMContentLoaded', async () => {
 
     const marquee = document.getElementById('marquee-track');
     if (marquee) {
-      const names = shows.map(s => s.title);
+      const names = [...new Set(shows.map(s => s.title))];
       const looped = [...names, ...names, ...names];
       marquee.innerHTML = looped.map(n => `${n} <span>&bull;</span>`).join(' ');
     }

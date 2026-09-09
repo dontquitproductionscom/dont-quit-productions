@@ -481,7 +481,6 @@ section { padding: clamp(3rem, 7vw, 5rem) 0; }
   padding: clamp(1.5rem, 4vw, 2.5rem);
   box-shadow: 8px 8px 0 var(--navy);
 }
-.founder:nth-of-type(2n) { background: var(--mint); }
 .founder__photo {
   aspect-ratio: 1;
   border-radius: 20px;

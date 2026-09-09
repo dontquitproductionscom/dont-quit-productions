@@ -1,16 +1,16 @@
 {
   "staff": [
     {
-      "name": "Your Name Here",
-      "role": "Founder / Artistic Director",
-      "bio": "Add a short bio via the CMS (Staff collection).",
+      "name": "Ryan Coleman",
+      "role": "Founder / CEO",
+      "bio": "Ryan Coleman grew up immersed in the world of theatre, but it wasn’t until he began taking acting classes at Second City that he rediscovered his passion for comedy and the performing arts. Through connections made, Ryan has gone on to write and produce sketch comedy shows, perform in improv groups, and book performances at theaters across Chicago. Now, he’s dedicated to helping others do the same.\n\nDon’t Quit Productions was founded with the mission of guiding creatives from concept to stage. Ryan's goal is to support artists with sketch or show ideas, helping them navigate the business side of show production. Don’t Quit Productions aims to be recognized as a premier name in Chicago comedy, with its stamp on show posters signifying top-tier performances, eventually expanding into film and more.",
       "photo": "/assets/img/dqp-mark-cropped.png"
     },
     {
-      "name": "Team Member",
-      "role": "Producer",
-      "bio": "Add a short bio via the CMS (Staff collection).",
-      "photo": "/assets/img/dqp-mark-cropped.png"
+      "name": "Kitty Clark",
+      "role": "Artistic Director",
+      "bio": "Kitty Clark grew up performing in the musical world. She participated in singing competitions throughout the years and eventually studied vocal performance at Western Michigan University before switching majors to study Communications. After taking a break from performing, Kitty threw herself back into it after moving to Chicago in August 2023. Through the programs at The Second City, Kitty began writing and producing sketch comedy shows, performing in various improv groups across Chicago, and rediscovering her love for performing.\n\nAs artistic director, Kitty is excited for Don’t Quit Productions to allow artists to explore their passions and focus on their craft. Her ultimate goal with DQP is to help beginning creatives find their grounding to flourish. ",
+      "photo": "/assets/img/uploads/facetune_23-02-2026-18-00-10.jpeg"
     }
   ]
 }

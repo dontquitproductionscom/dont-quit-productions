@@ -65,6 +65,42 @@
       "year": "2026",
       "status": "past",
       "poster": "/assets/img/uploads/show-posters-instagram-post-45-.png"
+    },
+    {
+      "title": "Improvised Christmas Carol",
+      "tagline": "An Improvised Christmas Classic",
+      "venue": "Judy's Beat Lounge @ Second City",
+      "dates": "Tuesdays, Dec 2-30 · 7:00pm",
+      "year": "2025",
+      "status": "past",
+      "poster": "/assets/img/uploads/tonight’s-show.png"
+    },
+    {
+      "title": "Set In Chicago: Holiday Style",
+      "tagline": "Holiday Movies, Improvised",
+      "venue": "Donny's Skybox Theater",
+      "dates": "Thursdays, Dec 4-18 · 8:30pm",
+      "year": "2025",
+      "status": "past",
+      "poster": "/assets/img/uploads/2def98b0-5840-40d4-bec8-1e003554f9c8.jpeg"
+    },
+    {
+      "title": "Thanksgiving Leftovers",
+      "tagline": "A Sketch Comedy Show Celebrating Life's Second Helpings",
+      "venue": "Judy's Beat Lounge @ Second City",
+      "dates": "Thursdays, Nov 6-20 · 8:30pm",
+      "year": "2025",
+      "status": "past",
+      "poster": "/assets/img/uploads/thanksgiving-leftovers-instagram-post-poster-us-.png"
+    },
+    {
+      "title": "Yes, AHHH! Presents: All Hallows' Eve",
+      "tagline": "An Improvised Horror Story",
+      "venue": "Annoyance Theater",
+      "dates": "Thursdays, Oct 16-30 · 7:00pm",
+      "year": "2025",
+      "status": "past",
+      "poster": "/assets/img/uploads/all-hallows’-eve.png"
     }
   ]
 }

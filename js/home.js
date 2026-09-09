@@ -32,7 +32,7 @@ document.addEventListener('DOMContentLoaded', async () => {
           <div>${ICON_PIN} ${current.venue}</div>
           <div>${ICON_CALENDAR} ${current.dates}</div>
         </div>
-        <a class="btn btn-blue" href="${current.ticketUrl}">Get Tickets</a>
+        ${current.status !== 'past' ? `<a class="btn btn-blue" href="${current.ticketUrl}">Get Tickets</a>` : ''}
         <a class="btn btn-outline" href="/productions.html">All Productions</a>
       </div>
     `;

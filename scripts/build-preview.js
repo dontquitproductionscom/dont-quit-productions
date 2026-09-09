@@ -156,7 +156,7 @@ body { min-height: 100vh; }
             <div>${ICON_PIN} ${current.venue}</div>
             <div>${ICON_CALENDAR} ${current.dates}</div>
           </div>
-          <button class="btn btn-blue" onclick="previewNote()">Get Tickets</button>
+          ${current.status !== 'past' ? '<button class="btn btn-blue" onclick="previewNote()">Get Tickets</button>' : ''}
           <button class="btn btn-outline" onclick="goTo('productions')">All Productions</button>
         </div>
       </div>
@@ -351,7 +351,7 @@ function renderShows() {
         '<div class="show-card__meta"><div>' + iconPin + ' ' + s.venue + '</div><div>' + iconCalendar + ' ' + s.dates + '</div></div>' +
         '<div class="show-card__footer">' +
           '<span class="badge badge--' + s.status + '">' + (badgeLabel[s.status] || s.status) + '</span>' +
-          '<button class="btn btn-blue" style="padding:0.5rem 1.1rem;font-size:0.8rem;" onclick="previewNote()">Tickets</button>' +
+          (s.status !== 'past' ? '<button class="btn btn-blue" style="padding:0.5rem 1.1rem;font-size:0.8rem;" onclick="previewNote()">Tickets</button>' : '') +
         '</div>' +
       '</div>' +
     '</article>';

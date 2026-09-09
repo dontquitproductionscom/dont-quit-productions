@@ -40,7 +40,7 @@ document.addEventListener('DOMContentLoaded', async () => {
           </div>
           <div class="show-card__footer">
             <span class="badge badge--${s.status}">${badgeLabel[s.status] || s.status}</span>
-            <a class="btn btn-blue" href="${s.ticketUrl}" style="padding:0.5rem 1.1rem;font-size:0.8rem;">Tickets</a>
+            ${s.status !== 'past' ? `<a class="btn btn-blue" href="${s.ticketUrl}" style="padding:0.5rem 1.1rem;font-size:0.8rem;">Tickets</a>` : ''}
           </div>
         </div>
       </article>

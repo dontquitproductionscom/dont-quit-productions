@@ -11,23 +11,23 @@
       "ticketUrl": "#https://www.secondcity.com/shows/chicago/set-in-chicago-improvised-spooky-movie-sequels-chi"
     },
     {
-      "title": "Sample Show Title",
-      "tagline": "Replace this with your show's tagline",
-      "venue": "Venue name",
-      "dates": "Day, Month-Month · Time",
-      "year": "2025",
+      "title": "Set In Chicago",
+      "tagline": "Movie Sequels, Improvised",
+      "venue": "de Maat Studio Theater @ Second City",
+      "dates": "Thursdays, June 4-July 23 · 7:30pm",
+      "year": "2026",
       "status": "past",
-      "poster": "/assets/img/dqp-mark-cropped.png",
+      "poster": "/assets/img/uploads/poster_boobsdog.pdf.png",
       "ticketUrl": "#"
     },
     {
-      "title": "Sample Show Title",
-      "tagline": "Add your 2024 shows here via the CMS",
-      "venue": "Venue name",
-      "dates": "Day, Month-Month · Time",
-      "year": "2024",
+      "title": "New Week New Show",
+      "tagline": "Sketch Comedy Written in 7 Days or Less",
+      "venue": "de Maat Studio Theater @ Second City",
+      "dates": "Saturdays, June 4-27 · 8:00pm",
+      "year": "2026",
       "status": "past",
-      "poster": "/assets/img/dqp-mark-cropped.png",
+      "poster": "/assets/img/uploads/nwns-print.png",
       "ticketUrl": "#"
     }
   ]

@@ -22,13 +22,49 @@
     },
     {
       "title": "New Week New Show",
-      "tagline": "Sketch Comedy Written in 7 Days or Less",
+      "tagline": "All-New Sketches, Written in 7 Days or Less",
       "venue": "de Maat Studio Theater @ Second City",
       "dates": "Saturdays, June 4-27 · 8:00pm",
       "year": "2026",
       "status": "past",
       "poster": "/assets/img/uploads/nwns-print.png",
       "ticketUrl": "#"
+    },
+    {
+      "title": "Set In Chicago",
+      "tagline": "Movie Sequels, Improvised",
+      "venue": "de Maat Studio Theater @ Second City",
+      "year": "2026",
+      "dates": "Thursdays, March 12-April 30 · 7:30pm",
+      "status": "past",
+      "poster": "/assets/img/uploads/poster_social-1-.png"
+    },
+    {
+      "title": "The Kitty & Kellie Show",
+      "tagline": "A Valentine's Sketch Show for Literally Everyone",
+      "venue": "de Maat Studio Theater @ Second City",
+      "dates": "Saturdays, Feb 7-28 · 8:00pm",
+      "year": "2026",
+      "status": "past",
+      "poster": "/assets/img/uploads/9f34d1c3-256e-43e2-bd3f-74478215f7e8.jpeg"
+    },
+    {
+      "title": "Prov Ur Love 2 Me",
+      "tagline": "An Improvised Dating Show",
+      "venue": "de Maat Studio Theater @ Second City",
+      "dates": "Fridays, Feb 6-27 · 9:00pm",
+      "year": "2026",
+      "status": "past",
+      "poster": "/assets/img/uploads/screenshot-2026-09-09-142821.png"
+    },
+    {
+      "title": "New Year, New Show",
+      "tagline": "All-New Sketches, Written in 7 Days or Less",
+      "venue": "de Maat Studio Theater @ Second City",
+      "dates": "Saturdays, Jan 3-31 · 8:00pm",
+      "year": "2026",
+      "status": "past",
+      "poster": "/assets/img/uploads/show-posters-instagram-post-45-.png"
     }
   ]
 }

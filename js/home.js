@@ -42,6 +42,22 @@ document.addEventListener('DOMContentLoaded', async () => {
       const names = [...new Set(shows.map(s => s.title))];
       const looped = [...names, ...names, ...names];
       marquee.innerHTML = looped.map(n => `${n} <span>&bull;</span>`).join(' ');
+
+      // Keep a constant scroll speed no matter how many shows are in the
+      // ticker — duration scales with content width instead of being fixed,
+      // so it doesn't speed up every time a new show gets added. Wait for
+      // the display font to finish loading first, otherwise this measures
+      // the wider fallback-font text and picks the wrong duration.
+      const setMarqueeSpeed = () => {
+        const PIXELS_PER_SECOND = 70;
+        const duration = Math.max(20, marquee.scrollWidth / PIXELS_PER_SECOND);
+        marquee.style.animationDuration = `${duration}s`;
+      };
+      if (document.fonts && document.fonts.ready) {
+        document.fonts.ready.then(setMarqueeSpeed);
+      } else {
+        setMarqueeSpeed();
+      }
     }
   } catch (e) { console.error(e); }
 });

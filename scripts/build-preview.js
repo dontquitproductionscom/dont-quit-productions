@@ -137,7 +137,7 @@ body { min-height: 100vh; }
   </section>
 
   <div class="marquee">
-    <div class="marquee__track">${marqueeLooped}</div>
+    <div class="marquee__track" id="marquee-track">${marqueeLooped}</div>
   </div>
 
   <section>
@@ -310,6 +310,21 @@ body { min-height: 100vh; }
 
 <script>
 document.getElementById('footer-year').textContent = new Date().getFullYear();
+
+(function() {
+  var track = document.getElementById('marquee-track');
+  if (!track) return;
+  function setSpeed() {
+    var PIXELS_PER_SECOND = 70;
+    var duration = Math.max(20, track.scrollWidth / PIXELS_PER_SECOND);
+    track.style.animationDuration = duration + 's';
+  }
+  if (document.fonts && document.fonts.ready) {
+    document.fonts.ready.then(setSpeed);
+  } else {
+    setSpeed();
+  }
+})();
 
 function goTo(page) {
   document.querySelectorAll('.page-section').forEach(function(el){ el.classList.remove('is-active'); });

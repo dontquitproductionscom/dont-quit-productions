@@ -55,6 +55,13 @@ document.addEventListener('DOMContentLoaded', async () => {
     const marquee = document.getElementById('marquee-track');
     if (marquee) {
       const names = [...new Set(shows.map(s => s.title))];
+      // Shows added around the same time (e.g. multiple runs of similar
+      // titles) tend to sit next to each other in the CMS list, so shuffle
+      // before looping to spread similar-sounding titles apart in the ticker.
+      for (let i = names.length - 1; i > 0; i--) {
+        const j = Math.floor(Math.random() * (i + 1));
+        [names[i], names[j]] = [names[j], names[i]];
+      }
       const looped = [...names, ...names, ...names];
       marquee.innerHTML = looped.map(n => `${n} <span>&bull;</span>`).join(' ');
 

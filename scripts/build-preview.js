@@ -378,7 +378,7 @@ document.getElementById('footer-year').textContent = new Date().getFullYear();
   var track = document.getElementById('marquee-track');
   if (!track) return;
   function setSpeed() {
-    var PIXELS_PER_SECOND = 70;
+    var PIXELS_PER_SECOND = 85;
     var duration = Math.max(20, track.scrollWidth / PIXELS_PER_SECOND);
     track.style.animationDuration = duration + 's';
   }

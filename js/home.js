@@ -64,7 +64,7 @@ document.addEventListener('DOMContentLoaded', async () => {
       // the display font to finish loading first, otherwise this measures
       // the wider fallback-font text and picks the wrong duration.
       const setMarqueeSpeed = () => {
-        const PIXELS_PER_SECOND = 70;
+        const PIXELS_PER_SECOND = 85;
         const duration = Math.max(20, marquee.scrollWidth / PIXELS_PER_SECOND);
         marquee.style.animationDuration = `${duration}s`;
       };

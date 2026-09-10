@@ -45,7 +45,8 @@ document.addEventListener('DOMContentLoaded', async () => {
             <div>${ICON_PIN} ${current.venue}</div>
             <div>${ICON_CALENDAR} ${current.dates}</div>
           </div>
-          ${status !== 'past' ? `<a class="btn btn-blue" href="${current.ticketUrl}">Get Tickets</a>` : ''}
+          ${status !== 'past' && current.ticketUrl ? `<a class="btn btn-blue" href="${current.ticketUrl}">Get Tickets</a>` : ''}
+          ${status !== 'past' && current.trailerUrl ? `<a class="btn btn-mint" href="${current.trailerUrl}" target="_blank" rel="noopener">Watch Trailer</a>` : ''}
           <a class="btn btn-outline" href="/productions.html">All Productions</a>
         </div>
       `;

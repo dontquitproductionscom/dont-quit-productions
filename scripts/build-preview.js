@@ -78,6 +78,13 @@ function galleryItem(p) {
 function spotlightCard(s) {
   const status = effectiveStatus(s);
   const label = { live: 'Now Playing', soon: 'Coming Soon', past: 'Past Run' }[status] || status;
+  const actions = [];
+  if (status !== 'past' && s.ticketUrl) {
+    actions.push(`<button class="btn btn-blue" style="padding:0.5rem 1.1rem;font-size:0.8rem;" onclick="previewNote()">Tickets</button>`);
+  }
+  if (status !== 'past' && s.trailerUrl) {
+    actions.push(`<button class="btn btn-mint" style="padding:0.5rem 1.1rem;font-size:0.8rem;" onclick="previewNote()">Watch Trailer</button>`);
+  }
   return `
       <article class="show-card">
         <div class="show-card__poster"><img src="${MARK_URI}" alt="${s.title} poster" loading="lazy"></div>
@@ -90,7 +97,7 @@ function spotlightCard(s) {
           </div>
           <div class="show-card__footer">
             <span class="badge badge--${status}">${label}</span>
-            ${status !== 'past' ? `<button class="btn btn-blue" style="padding:0.5rem 1.1rem;font-size:0.8rem;" onclick="previewNote()">Tickets</button>` : ''}
+            ${actions.length ? `<div style="display:flex;gap:0.5rem;flex-wrap:wrap;">${actions.join('')}</div>` : ''}
           </div>
         </div>
       </article>`;
@@ -210,7 +217,8 @@ body { min-height: 100vh; }
             <div>${ICON_PIN} ${current.venue}</div>
             <div>${ICON_CALENDAR} ${current.dates}</div>
           </div>
-          ${currentStatus !== 'past' ? '<button class="btn btn-blue" onclick="previewNote()">Get Tickets</button>' : ''}
+          ${currentStatus !== 'past' && current.ticketUrl ? '<button class="btn btn-blue" onclick="previewNote()">Get Tickets</button>' : ''}
+          ${currentStatus !== 'past' && current.trailerUrl ? '<button class="btn btn-mint" onclick="previewNote()">Watch Trailer</button>' : ''}
           <button class="btn btn-outline" onclick="goTo('productions')">All Productions</button>
         </div>
       </div>`}
@@ -426,6 +434,13 @@ function renderShows() {
   }
   grid.innerHTML = filtered.map(function(s){
     var status = clientEffectiveStatus(s);
+    var actions = '';
+    if (status !== 'past' && s.ticketUrl) {
+      actions += '<button class="btn btn-blue" style="padding:0.5rem 1.1rem;font-size:0.8rem;" onclick="previewNote()">Tickets</button>';
+    }
+    if (status !== 'past' && s.trailerUrl) {
+      actions += '<button class="btn btn-mint" style="padding:0.5rem 1.1rem;font-size:0.8rem;" onclick="previewNote()">Watch Trailer</button>';
+    }
     return '<article class="show-card">' +
       '<div class="show-card__poster"><img src="${MARK_URI}" alt="' + s.title + ' poster" loading="lazy"></div>' +
       '<div class="show-card__body">' +
@@ -434,7 +449,7 @@ function renderShows() {
         '<div class="show-card__meta"><div>' + iconPin + ' ' + s.venue + '</div><div>' + iconCalendar + ' ' + s.dates + '</div></div>' +
         '<div class="show-card__footer">' +
           '<span class="badge badge--' + status + '">' + (badgeLabel[status] || status) + '</span>' +
-          (status !== 'past' ? '<button class="btn btn-blue" style="padding:0.5rem 1.1rem;font-size:0.8rem;" onclick="previewNote()">Tickets</button>' : '') +
+          (actions ? '<div style="display:flex;gap:0.5rem;flex-wrap:wrap;">' + actions + '</div>' : '') +
         '</div>' +
       '</div>' +
     '</article>';

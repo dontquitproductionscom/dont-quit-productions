@@ -40,6 +40,11 @@ collections:
                 hint: "Optional. If set, the site automatically switches this show to Past Run the day after this date, no need to come back and change Status yourself. Leave blank to keep it fully manual."
               - { label: "Poster Image", name: "poster", widget: "image" }
               - { label: "Ticket URL", name: "ticketUrl", widget: "string", required: false }
+              - label: "Trailer URL"
+                name: "trailerUrl"
+                widget: "string"
+                required: false
+                hint: "YouTube or Vimeo link. Adds a Watch Trailer button to the card, for films/proof-of-concepts that don't sell tickets."
 
   - name: "staff"
     label: "Staff"

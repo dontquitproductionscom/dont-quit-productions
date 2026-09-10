@@ -42,6 +42,13 @@ function effectiveStatus(s) {
 
 function renderShowCard(s) {
   const status = effectiveStatus(s);
+  const actions = [];
+  if (status !== 'past' && s.ticketUrl) {
+    actions.push(`<a class="btn btn-blue" href="${s.ticketUrl}" style="padding:0.5rem 1.1rem;font-size:0.8rem;">Tickets</a>`);
+  }
+  if (status !== 'past' && s.trailerUrl) {
+    actions.push(`<a class="btn btn-mint" href="${s.trailerUrl}" target="_blank" rel="noopener" style="padding:0.5rem 1.1rem;font-size:0.8rem;">Watch Trailer</a>`);
+  }
   return `
       <article class="show-card">
         <div class="show-card__poster"><img src="${s.poster}" alt="${s.title} poster" loading="lazy"></div>
@@ -54,7 +61,7 @@ function renderShowCard(s) {
           </div>
           <div class="show-card__footer">
             <span class="badge badge--${status}">${STATUS_LABELS[status] || status}</span>
-            ${status !== 'past' ? `<a class="btn btn-blue" href="${s.ticketUrl}" style="padding:0.5rem 1.1rem;font-size:0.8rem;">Tickets</a>` : ''}
+            ${actions.length ? `<div style="display:flex;gap:0.5rem;flex-wrap:wrap;">${actions.join('')}</div>` : ''}
           </div>
         </div>
       </article>

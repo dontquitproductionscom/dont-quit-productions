@@ -32,8 +32,11 @@ collections:
                   - { label: "Past Run", value: "past" }
               - label: "End Date"
                 name: "endDate"
-                widget: "date"
+                widget: "datetime"
                 required: false
+                date_format: true
+                time_format: false
+                format: "YYYY-MM-DD"
                 hint: "Optional. If set, the site automatically switches this show to Past Run the day after this date, no need to come back and change Status yourself. Leave blank to keep it fully manual."
               - { label: "Poster Image", name: "poster", widget: "image" }
               - { label: "Ticket URL", name: "ticketUrl", widget: "string", required: false }

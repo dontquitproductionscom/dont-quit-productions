@@ -96,9 +96,16 @@ async function renderStats() {
     const site = await fetchJSON('/content/site.json');
     if (statsEl) {
       const stats = site.stats || [];
+      let showCount = null;
+      if (stats.some(s => s.auto)) {
+        try {
+          const { shows } = await fetchJSON('/content/shows.json');
+          showCount = shows.length;
+        } catch (e) { /* fall back to the typed Value below */ }
+      }
       statsEl.innerHTML = stats.map(s => `
         <div class="stat-tile">
-          <div class="stat-tile__value">${s.value}</div>
+          <div class="stat-tile__value">${s.auto && showCount !== null ? showCount : s.value}</div>
           <div class="stat-tile__label">${s.label}</div>
         </div>
       `).join('');

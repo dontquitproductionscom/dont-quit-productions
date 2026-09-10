@@ -109,9 +109,10 @@ function spotlightCard(s) {
 }
 
 function statTile(s) {
+  const value = s.auto ? shows.length : s.value;
   return `
       <div class="stat-tile">
-        <div class="stat-tile__value">${s.value}</div>
+        <div class="stat-tile__value">${value}</div>
         <div class="stat-tile__label">${s.label}</div>
       </div>`;
 }

@@ -104,7 +104,12 @@ collections:
             hint: "Shows up as a row of stat tiles next to the mission text. Add, remove, or reorder freely."
             summary: "{{value}} • {{label}}"
             fields:
-              - { label: "Value", name: "value", widget: "string", hint: "e.g. 30, 16+, $1,500+" }
+              - label: "Auto-count productions?"
+                name: "auto"
+                widget: "boolean"
+                default: false
+                hint: "If checked, this tile shows the live total number of productions instead of the Value below, updating on its own as you add shows."
+              - { label: "Value", name: "value", widget: "string", required: false, hint: "e.g. 30, 16+, $1,500+. Ignored if Auto-count is checked above." }
               - { label: "Label", name: "label", widget: "string", hint: "e.g. Show runs produced" }
           - { label: "Pitch Title", name: "pitchTitle", widget: "string" }
           - { label: "Pitch Body", name: "pitchBody", widget: "text" }

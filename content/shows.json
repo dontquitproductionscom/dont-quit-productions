@@ -221,6 +221,15 @@
       "status": "past"
     },
     {
+      "title": "Toys for Tots: The Propular Kidz Holiday Charity Show",
+      "tagline": "100% of proceeds go to Toys for Tots",
+      "venue": "Blackout Cabaret @ Second City",
+      "dates": "Sunday, Dec 8 · 7:00pm",
+      "year": "2024",
+      "poster": "/assets/img/uploads/screenshot-2026-09-10-125237.png",
+      "status": "past"
+    },
+    {
       "title": "The Propular Kidz",
       "tagline": "Improv Prop Comedy",
       "venue": "Blackout Cabaret @ Second City",
@@ -255,6 +264,24 @@
       "year": "2024",
       "status": "past",
       "poster": "/assets/img/uploads/ppl-poster-print.png"
+    },
+    {
+      "title": "The Propular Kidz: Class of 2024",
+      "tagline": "An Improvised Prop Comedy Show",
+      "venue": "Blackout Carabet @ Second City",
+      "dates": "Fridays, Aug 2-30 · 9:00pm",
+      "year": "2024",
+      "status": "past",
+      "poster": "/assets/img/uploads/screenshot-2026-09-10-130214.png"
+    },
+    {
+      "title": "Puff, Puff, Laugh - Best Comedy Show 2024, First Runner Up",
+      "tagline": "A 3 Kids in a Trenchcoat Sketch Show",
+      "venue": "Annoyance Theatre",
+      "dates": "Saturday, April 13 · 8:00pm",
+      "year": "2024",
+      "status": "past",
+      "poster": "/assets/img/uploads/puffpufflaugh_8.5x11.jpeg"
     }
   ]
 }

@@ -206,6 +206,16 @@ p { margin: 0 0 1rem; }
   text-wrap: balance;
 }
 .hero__ctas { display: flex; gap: 1rem; flex-wrap: wrap; }
+.hero__badge {
+  position: absolute;
+  right: clamp(1rem, 5vw, 5rem);
+  top: 50%;
+  transform: translateY(-50%) rotate(5deg);
+  width: clamp(200px, 20vw, 320px);
+}
+@media (max-width: 1150px) {
+  .hero__badge { display: none; }
+}
 
 /* marquee ticker */
 .marquee {

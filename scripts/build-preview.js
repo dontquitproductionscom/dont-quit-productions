@@ -16,9 +16,11 @@ const gallery = JSON.parse(fs.readFileSync(path.join(root, 'content', 'gallery.j
 
 const logoB64 = fs.readFileSync(path.join(scratch, 'logo.b64'), 'utf8').trim();
 const markB64 = fs.readFileSync(path.join(scratch, 'mark.b64'), 'utf8').trim();
+const badgeB64 = fs.readFileSync(path.join(scratch, 'badge.b64'), 'utf8').trim();
 
 const LOGO_URI = `data:image/png;base64,${logoB64}`;
 const MARK_URI = `data:image/png;base64,${markB64}`;
+const BADGE_URI = `data:image/png;base64,${badgeB64}`;
 
 const shows = showsData.shows;
 const current = shows.find(s => s.status === 'live') || shows[0];
@@ -134,6 +136,7 @@ body { min-height: 100vh; }
 <!-- ============ HOME ============ -->
 <div class="page-section is-active" id="page-home">
   <section class="hero">
+    <img class="hero__badge" src="${BADGE_URI}" alt="Don't Quit Productions">
     <div class="wrap">
       <span class="hero__eyebrow">${site.heroEyebrow}</span>
       <h1>${site.heroTitle}</h1>

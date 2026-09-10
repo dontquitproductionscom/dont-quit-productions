@@ -183,6 +183,51 @@
       "year": "2025",
       "status": "past",
       "poster": "/assets/img/uploads/screenshot-2026-09-09-at-8.01.10 pm.png"
+    },
+    {
+      "poster": "/assets/img/uploads/screenshot-2026-09-10-123524.png",
+      "title": "Yes, AHHH! Presents: Bloody Valentine",
+      "tagline": "An Improvised Horror Story",
+      "venue": "iO Theater",
+      "dates": "Thursdays, Feb 6-27 · 9:00pm",
+      "year": "2025",
+      "status": "past"
+    },
+    {
+      "title": "prov ur luv 2 me",
+      "tagline": "An Improvised Dating Show",
+      "venue": "Blackout Cabaret @ Second City",
+      "dates": "Fridays, Feb 7-28 · 9:00pm",
+      "year": "2025",
+      "status": "past",
+      "poster": "/assets/img/uploads/screenshot-2026-09-10-124150.png"
+    },
+    {
+      "title": "The Kitty & Kellie Show",
+      "tagline": "A Galentines and Valentines Sketch Show",
+      "venue": "Judy's Beat Lounge @ Second City",
+      "dates": "Saturdays, Feb 8 - Mar 1 · 8:30pm",
+      "year": "2025",
+      "status": "past",
+      "poster": "/assets/img/uploads/3dc53ed9-5bd2-4884-b4c0-bb9c1c74b6a7.jpeg"
+    },
+    {
+      "title": "Yes, AHHH! Presents: Snowed In",
+      "tagline": "An Improvised Horror Story",
+      "venue": "Judy's Beat Lounge @ Second City",
+      "dates": "Saturdays, Jan 4-25 · 7:00pm",
+      "year": "2025",
+      "poster": "/assets/img/uploads/yes-ahhh-flyer-.png",
+      "status": "past"
+    },
+    {
+      "title": "The Propular Kidz",
+      "tagline": "Improv Prop Comedy",
+      "venue": "Blackout Cabaret @ Second City",
+      "dates": "Fridays, Nov 1-29 · 9:00pm",
+      "year": "2024",
+      "status": "past",
+      "poster": "/assets/img/uploads/screenshot-2026-09-10-124950.png"
     }
   ]
 }

@@ -136,8 +136,8 @@ body { min-height: 100vh; }
 <!-- ============ HOME ============ -->
 <div class="page-section is-active" id="page-home">
   <section class="hero">
-    <img class="hero__badge" src="${BADGE_URI}" alt="Don't Quit Productions">
     <div class="wrap">
+      <img class="hero__badge" src="${BADGE_URI}" alt="Don't Quit Productions">
       <span class="hero__eyebrow">${site.heroEyebrow}</span>
       <h1>${site.heroTitle}</h1>
       <p class="hero__sub">${site.heroSub}</p>

@@ -185,6 +185,7 @@ p { margin: 0 0 1rem; }
   padding: clamp(3rem, 8vw, 6rem) 0 clamp(2rem, 5vw, 3.5rem);
   overflow: hidden;
 }
+.hero > .wrap { position: relative; }
 .hero__eyebrow {
   font-family: var(--font-marker);
   color: var(--red);
@@ -208,7 +209,7 @@ p { margin: 0 0 1rem; }
 .hero__ctas { display: flex; gap: 1rem; flex-wrap: wrap; }
 .hero__badge {
   position: absolute;
-  right: clamp(1rem, 5vw, 5rem);
+  right: 0;
   top: 50%;
   transform: translateY(-50%) rotate(5deg);
   width: clamp(200px, 20vw, 320px);

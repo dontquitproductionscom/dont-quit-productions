@@ -45,16 +45,22 @@ async function renderSocialLinks() {
 }
 
 async function renderStats() {
-  const el = document.getElementById('mission-stats');
-  if (!el) return;
+  const statsEl = document.getElementById('mission-stats');
+  const photoEl = document.getElementById('mission-photo');
+  if (!statsEl && !photoEl) return;
   try {
     const site = await fetchJSON('/content/site.json');
-    const stats = site.stats || [];
-    el.innerHTML = stats.map(s => `
-      <div class="stat-tile">
-        <div class="stat-tile__value">${s.value}</div>
-        <div class="stat-tile__label">${s.label}</div>
-      </div>
-    `).join('');
+    if (statsEl) {
+      const stats = site.stats || [];
+      statsEl.innerHTML = stats.map(s => `
+        <div class="stat-tile">
+          <div class="stat-tile__value">${s.value}</div>
+          <div class="stat-tile__label">${s.label}</div>
+        </div>
+      `).join('');
+    }
+    if (photoEl && site.missionPhoto) {
+      photoEl.src = site.missionPhoto;
+    }
   } catch (e) { console.error(e); }
 }

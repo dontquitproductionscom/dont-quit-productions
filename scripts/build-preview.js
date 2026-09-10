@@ -182,7 +182,10 @@ body { min-height: 100vh; }
         <p class="mt-2">${site.missionBody}</p>
         <button class="btn btn-blue" onclick="goTo('about')">More About Us</button>
       </div>
-      <div class="mission__stats">${statsHTML}</div>
+      <div>
+        <div class="mission__media"><img src="${MARK_URI}" alt="Don't Quit Productions"></div>
+        <div class="mission__stats">${statsHTML}</div>
+      </div>
     </div>
   </section>
 </div>
@@ -236,7 +239,10 @@ body { min-height: 100vh; }
         <h2>${site.missionTitle}</h2>
         <p class="mt-2">${site.missionBody}</p>
       </div>
-      <div class="mission__stats">${statsHTML}</div>
+      <div>
+        <div class="mission__media"><img src="${MARK_URI}" alt="Don't Quit Productions"></div>
+        <div class="mission__stats">${statsHTML}</div>
+      </div>
     </div>
   </section>
   <section class="section--navy">

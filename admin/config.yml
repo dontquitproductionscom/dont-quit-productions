@@ -77,6 +77,10 @@ collections:
           - { label: "Hero Subtext", name: "heroSub", widget: "text" }
           - { label: "Mission Eyebrow", name: "missionEyebrow", widget: "string" }
           - { label: "Mission Title", name: "missionTitle", widget: "string" }
+          - label: "Mission Photo"
+            name: "missionPhoto"
+            widget: "image"
+            hint: "Shows next to the stats on the Home and About pages. A real show/crowd/team photo works best."
           - label: "Mission Body"
             name: "missionBody"
             widget: "text"

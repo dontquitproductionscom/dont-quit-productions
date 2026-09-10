@@ -136,15 +136,17 @@ body { min-height: 100vh; }
 <!-- ============ HOME ============ -->
 <div class="page-section is-active" id="page-home">
   <section class="hero">
-    <div class="wrap">
-      <img class="hero__badge" src="${BADGE_URI}" alt="Don't Quit Productions">
-      <span class="hero__eyebrow">${site.heroEyebrow}</span>
-      <h1>${site.heroTitle}</h1>
-      <p class="hero__sub">${site.heroSub}</p>
-      <div class="hero__ctas">
-        <button class="btn btn-red" onclick="goTo('productions')">See Current Shows</button>
-        <button class="btn btn-mint" onclick="goTo('about')">Pitch a Show</button>
+    <div class="wrap hero__row">
+      <div>
+        <span class="hero__eyebrow">${site.heroEyebrow}</span>
+        <h1>${site.heroTitle}</h1>
+        <p class="hero__sub">${site.heroSub}</p>
+        <div class="hero__ctas">
+          <button class="btn btn-red" onclick="goTo('productions')">See Current Shows</button>
+          <button class="btn btn-mint" onclick="goTo('about')">Pitch a Show</button>
+        </div>
       </div>
+      <img class="hero__badge" src="${BADGE_URI}" alt="Don't Quit Productions">
     </div>
   </section>
 

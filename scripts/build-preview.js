@@ -202,9 +202,9 @@ body { min-height: 100vh; }
 <div class="page-section" id="page-gallery">
   <section class="page-hero">
     <div class="wrap">
-      <span class="eyebrow">Behind the scenes</span>
-      <h1>Gallery</h1>
-      <p>Moments from our shows, rehearsals, and everything in between.</p>
+      <span class="eyebrow">${site.galleryEyebrow}</span>
+      <h1>${site.galleryTitle}</h1>
+      <p>${site.galleryIntro}</p>
     </div>
   </section>
   <section style="padding-top:0;">

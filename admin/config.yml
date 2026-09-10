@@ -89,6 +89,9 @@ collections:
             widget: "string"
             required: false
             hint: "Paste your PayPal.me / Venmo / Stripe Payment Link / Ko-fi link here once you've set one up. Leave blank to hide the button's real destination for now."
+          - { label: "Gallery Eyebrow", name: "galleryEyebrow", widget: "string" }
+          - { label: "Gallery Title", name: "galleryTitle", widget: "string" }
+          - { label: "Gallery Intro", name: "galleryIntro", widget: "text" }
           - { label: "Instagram URL", name: "instagram", widget: "string", required: false }
           - { label: "TikTok URL", name: "tiktok", widget: "string", required: false }
           - { label: "YouTube URL", name: "youtube", widget: "string", required: false }

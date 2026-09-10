@@ -11,6 +11,7 @@ document.addEventListener('DOMContentLoaded', () => {
   if (yearEl) yearEl.textContent = new Date().getFullYear();
 
   renderSocialLinks();
+  renderStats();
 });
 
 async function fetchJSON(path) {
@@ -40,5 +41,20 @@ async function renderSocialLinks() {
     el.innerHTML = socials.map(s =>
       `<a href="${site[s.key]}" target="_blank" rel="noopener" aria-label="${s.label}">${s.icon}</a>`
     ).join('');
+  } catch (e) { console.error(e); }
+}
+
+async function renderStats() {
+  const el = document.getElementById('mission-stats');
+  if (!el) return;
+  try {
+    const site = await fetchJSON('/content/site.json');
+    const stats = site.stats || [];
+    el.innerHTML = stats.map(s => `
+      <div class="stat-tile">
+        <div class="stat-tile__value">${s.value}</div>
+        <div class="stat-tile__label">${s.label}</div>
+      </div>
+    `).join('');
   } catch (e) { console.error(e); }
 }

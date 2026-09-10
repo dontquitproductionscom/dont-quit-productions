@@ -382,11 +382,21 @@ section { padding: clamp(3rem, 7vw, 5rem) 0; }
   gap: var(--gap);
   align-items: center;
 }
-.mission__stat {
+.mission .mt-2 { white-space: pre-line; }
+.mission__stats {
+  display: flex;
+  flex-direction: column;
+  gap: clamp(1.25rem, 3vw, 1.75rem);
+}
+.stat-tile__value {
   font-family: var(--font-display);
-  font-size: clamp(3rem, 8vw, 5.5rem);
+  font-size: clamp(2.6rem, 6vw, 4rem);
   color: var(--red);
   line-height: 0.9;
+}
+.stat-tile__label {
+  font-size: 1rem;
+  margin-top: 0.25rem;
 }
 @media (max-width: 760px) {
   .mission { grid-template-columns: 1fr; }

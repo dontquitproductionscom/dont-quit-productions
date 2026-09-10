@@ -59,6 +59,15 @@ function galleryItem(p) {
       </figure>`;
 }
 
+function statTile(s) {
+  return `
+      <div class="stat-tile">
+        <div class="stat-tile__value">${s.value}</div>
+        <div class="stat-tile__label">${s.label}</div>
+      </div>`;
+}
+const statsHTML = (site.stats || []).map(statTile).join('');
+
 const html = `<title>Don't Quit Productions</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -173,10 +182,7 @@ body { min-height: 100vh; }
         <p class="mt-2">${site.missionBody}</p>
         <button class="btn btn-blue" onclick="goTo('about')">More About Us</button>
       </div>
-      <div>
-        <div class="mission__stat">100%</div>
-        <p>independent, artist-first, and always looking for the next spectacular idea.</p>
-      </div>
+      <div class="mission__stats">${statsHTML}</div>
     </div>
   </section>
 </div>
@@ -230,7 +236,7 @@ body { min-height: 100vh; }
         <h2>${site.missionTitle}</h2>
         <p class="mt-2">${site.missionBody}</p>
       </div>
-      <div class="mission__stat">100%<p style="font-family:var(--font-body);font-size:1rem;color:var(--cream);">independent, artist-first, always looking for the next spectacular idea.</p></div>
+      <div class="mission__stats">${statsHTML}</div>
     </div>
   </section>
   <section class="section--navy">

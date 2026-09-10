@@ -77,7 +77,18 @@ collections:
           - { label: "Hero Subtext", name: "heroSub", widget: "text" }
           - { label: "Mission Eyebrow", name: "missionEyebrow", widget: "string" }
           - { label: "Mission Title", name: "missionTitle", widget: "string" }
-          - { label: "Mission Body", name: "missionBody", widget: "text" }
+          - label: "Mission Body"
+            name: "missionBody"
+            widget: "text"
+            hint: "Leave a blank line between paragraphs to break them apart on the page."
+          - label: "Stats"
+            name: "stats"
+            widget: "list"
+            hint: "Shows up as a row of stat tiles next to the mission text. Add, remove, or reorder freely."
+            summary: "{{value}} • {{label}}"
+            fields:
+              - { label: "Value", name: "value", widget: "string", hint: "e.g. 30, 16+, $1,500+" }
+              - { label: "Label", name: "label", widget: "string", hint: "e.g. Show runs produced" }
           - { label: "Pitch Title", name: "pitchTitle", widget: "string" }
           - { label: "Pitch Body", name: "pitchBody", widget: "text" }
           - { label: "Support Eyebrow", name: "supportEyebrow", widget: "string" }

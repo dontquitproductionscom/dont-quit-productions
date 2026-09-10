@@ -22,9 +22,23 @@ const LOGO_URI = `data:image/png;base64,${logoB64}`;
 const MARK_URI = `data:image/png;base64,${markB64}`;
 const BADGE_URI = `data:image/png;base64,${badgeB64}`;
 
+// Mirrors js/main.js's effectiveStatus(): a show counts as past once its
+// Status says so, or once its End Date has gone by (no End Date = fully manual).
+function effectiveStatus(s) {
+  if (s.status === 'past') return 'past';
+  if (s.endDate) {
+    const end = new Date(s.endDate + 'T23:59:59');
+    if (!isNaN(end) && end < new Date()) return 'past';
+  }
+  return s.status;
+}
+
 const shows = showsData.shows;
-const current = shows.find(s => s.status === 'live') || shows[0];
-const currentStatusLabel = { live: 'Now Playing', soon: 'Coming Soon', past: 'Recent Run' }[current.status] || 'Featured';
+const liveShows = shows.filter(s => effectiveStatus(s) === 'live');
+const current = liveShows[0] || shows[0];
+const currentStatus = effectiveStatus(current);
+const currentStatusLabel = { live: 'Now Playing', soon: 'Coming Soon', past: 'Recent Run' }[currentStatus] || 'Featured';
+const spotlightHeading = liveShows.length > 1 ? 'Current Productions' : 'Current Production';
 const marqueeNames = [...new Set(shows.map(s => s.title))];
 const marqueeLooped = [...marqueeNames, ...marqueeNames, ...marqueeNames].map(n => `${n} <span>&bull;</span>`).join(' ');
 
@@ -59,6 +73,27 @@ function galleryItem(p) {
         <div class="gallery-item__photo"><img src="${MARK_URI}" alt="${p.caption}" loading="lazy"></div>
         <figcaption class="gallery-item__caption">${p.caption}</figcaption>
       </figure>`;
+}
+
+function spotlightCard(s) {
+  const status = effectiveStatus(s);
+  const label = { live: 'Now Playing', soon: 'Coming Soon', past: 'Past Run' }[status] || status;
+  return `
+      <article class="show-card">
+        <div class="show-card__poster"><img src="${MARK_URI}" alt="${s.title} poster" loading="lazy"></div>
+        <div class="show-card__body">
+          <h3 class="show-card__title">${s.title}</h3>
+          <p class="show-card__tagline">${s.tagline}</p>
+          <div class="show-card__meta">
+            <div>${ICON_PIN} ${s.venue}</div>
+            <div>${ICON_CALENDAR} ${s.dates}</div>
+          </div>
+          <div class="show-card__footer">
+            <span class="badge badge--${status}">${label}</span>
+            ${status !== 'past' ? `<button class="btn btn-blue" style="padding:0.5rem 1.1rem;font-size:0.8rem;" onclick="previewNote()">Tickets</button>` : ''}
+          </div>
+        </div>
+      </article>`;
 }
 
 function statTile(s) {
@@ -159,9 +194,12 @@ body { min-height: 100vh; }
       <div class="section-head">
         <div>
           <span class="eyebrow">On stage now</span>
-          <h2>Current Production</h2>
+          <h2>${spotlightHeading}</h2>
         </div>
       </div>
+      ${liveShows.length > 1 ? `
+      <div class="show-grid">${liveShows.map(spotlightCard).join('')}
+      </div>` : `
       <div class="spotlight">
         <div class="spotlight__poster"><img src="${MARK_URI}" alt="${current.title}"></div>
         <div>
@@ -172,10 +210,10 @@ body { min-height: 100vh; }
             <div>${ICON_PIN} ${current.venue}</div>
             <div>${ICON_CALENDAR} ${current.dates}</div>
           </div>
-          ${current.status !== 'past' ? '<button class="btn btn-blue" onclick="previewNote()">Get Tickets</button>' : ''}
+          ${currentStatus !== 'past' ? '<button class="btn btn-blue" onclick="previewNote()">Get Tickets</button>' : ''}
           <button class="btn btn-outline" onclick="goTo('productions')">All Productions</button>
         </div>
-      </div>
+      </div>`}
     </div>
   </section>
 
@@ -366,6 +404,15 @@ var badgeLabel = { live: 'Now Playing', soon: 'Coming Soon', past: 'Past Run' };
 var iconPin = '${ICON_PIN}';
 var iconCalendar = '${ICON_CALENDAR}';
 
+function clientEffectiveStatus(s) {
+  if (s.status === 'past') return 'past';
+  if (s.endDate) {
+    var end = new Date(s.endDate + 'T23:59:59');
+    if (!isNaN(end) && end < new Date()) return 'past';
+  }
+  return s.status;
+}
+
 function renderShows() {
   document.getElementById('year-tabs').innerHTML = years.map(function(y){
     return '<button class="filter-tab ' + (y === activeYear ? 'is-active' : '') + '" onclick="setYear(\\'' + y + '\\')">' + y + '</button>';
@@ -378,6 +425,7 @@ function renderShows() {
     return;
   }
   grid.innerHTML = filtered.map(function(s){
+    var status = clientEffectiveStatus(s);
     return '<article class="show-card">' +
       '<div class="show-card__poster"><img src="${MARK_URI}" alt="' + s.title + ' poster" loading="lazy"></div>' +
       '<div class="show-card__body">' +
@@ -385,8 +433,8 @@ function renderShows() {
         '<p class="show-card__tagline">' + s.tagline + '</p>' +
         '<div class="show-card__meta"><div>' + iconPin + ' ' + s.venue + '</div><div>' + iconCalendar + ' ' + s.dates + '</div></div>' +
         '<div class="show-card__footer">' +
-          '<span class="badge badge--' + s.status + '">' + (badgeLabel[s.status] || s.status) + '</span>' +
-          (s.status !== 'past' ? '<button class="btn btn-blue" style="padding:0.5rem 1.1rem;font-size:0.8rem;" onclick="previewNote()">Tickets</button>' : '') +
+          '<span class="badge badge--' + status + '">' + (badgeLabel[status] || status) + '</span>' +
+          (status !== 'past' ? '<button class="btn btn-blue" style="padding:0.5rem 1.1rem;font-size:0.8rem;" onclick="previewNote()">Tickets</button>' : '') +
         '</div>' +
       '</div>' +
     '</article>';

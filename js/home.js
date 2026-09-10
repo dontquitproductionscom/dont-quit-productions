@@ -14,28 +14,42 @@ document.addEventListener('DOMContentLoaded', async () => {
 
   try {
     const { shows } = await fetchJSON('/content/shows.json');
-    const current = shows.find(s => s.status === 'live') || shows[0];
-    if (!current) return;
+    if (!shows.length) return;
 
     const spotlight = document.getElementById('spotlight');
+    const headingEl = document.getElementById('spotlight-heading');
     if (!spotlight) return;
 
-    const statusLabel = { live: "Now Playing", soon: "Coming Soon", past: "Recent Run" }[current.status] || "Featured";
+    const liveShows = shows.filter(s => effectiveStatus(s) === 'live');
 
-    spotlight.innerHTML = `
-      <div class="spotlight__poster"><img src="${current.poster}" alt="${current.title} poster"></div>
-      <div>
-        <span class="spotlight__status">${statusLabel}</span>
-        <h3 class="spotlight__title">${current.title}</h3>
-        <p>${current.tagline}</p>
-        <div class="spotlight__meta">
-          <div>${ICON_PIN} ${current.venue}</div>
-          <div>${ICON_CALENDAR} ${current.dates}</div>
+    if (liveShows.length > 1) {
+      // More than one show running at once — switch to a grid of cards
+      // instead of the single big spotlight, and pluralize the heading.
+      if (headingEl) headingEl.textContent = 'Current Productions';
+      spotlight.className = 'show-grid';
+      spotlight.innerHTML = liveShows.map(renderShowCard).join('');
+    } else {
+      if (headingEl) headingEl.textContent = 'Current Production';
+      spotlight.className = 'spotlight';
+      const current = liveShows[0] || shows[0];
+      const status = effectiveStatus(current);
+      const statusLabel = { live: "Now Playing", soon: "Coming Soon", past: "Recent Run" }[status] || "Featured";
+
+      spotlight.innerHTML = `
+        <div class="spotlight__poster"><img src="${current.poster}" alt="${current.title} poster"></div>
+        <div>
+          <span class="spotlight__status">${statusLabel}</span>
+          <h3 class="spotlight__title">${current.title}</h3>
+          <p>${current.tagline}</p>
+          <div class="spotlight__meta">
+            <div>${ICON_PIN} ${current.venue}</div>
+            <div>${ICON_CALENDAR} ${current.dates}</div>
+          </div>
+          ${status !== 'past' ? `<a class="btn btn-blue" href="${current.ticketUrl}">Get Tickets</a>` : ''}
+          <a class="btn btn-outline" href="/productions.html">All Productions</a>
         </div>
-        ${current.status !== 'past' ? `<a class="btn btn-blue" href="${current.ticketUrl}">Get Tickets</a>` : ''}
-        <a class="btn btn-outline" href="/productions.html">All Productions</a>
-      </div>
-    `;
+      `;
+    }
 
     const marquee = document.getElementById('marquee-track');
     if (marquee) {

@@ -228,6 +228,33 @@
       "year": "2024",
       "status": "past",
       "poster": "/assets/img/uploads/screenshot-2026-09-10-124950.png"
+    },
+    {
+      "title": "Yes, AHHH!",
+      "tagline": "An Improvised Horror Story",
+      "venue": "Blackout Cabaret @ Second City",
+      "dates": "Fridays, Oct 4-25 · 10:30pm",
+      "year": "2024",
+      "status": "past",
+      "poster": "/assets/img/uploads/screenshot-2026-09-10-125615.png"
+    },
+    {
+      "title": "Puff, Puff, Laugh (vol. 3)",
+      "tagline": "A 3 Kids in a Trenchcoat Sketch Show",
+      "venue": "Judy's Beat Lounge @ Second City",
+      "dates": "Thursdays, Sep 12-Oct 3 · 9:30pm",
+      "year": "2024",
+      "poster": "/assets/img/uploads/ppl-insta-real-estate-flyer-.png",
+      "status": "past"
+    },
+    {
+      "title": "Puff, Puff, Laugh (vol.2)",
+      "tagline": "A 3 Kids in a Trenchcoat Sketch Show",
+      "venue": "Annoyance Theatre",
+      "dates": "Thursdays, Aug 15-Sep 5 · 7:00pm",
+      "year": "2024",
+      "status": "past",
+      "poster": "/assets/img/uploads/ppl-poster-print.png"
     }
   ]
 }

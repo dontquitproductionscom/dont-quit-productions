@@ -176,6 +176,7 @@ body { min-height: 100vh; }
       <li><a data-page="gallery" onclick="goTo('gallery')">Gallery</a></li>
       <li><a data-page="about" onclick="goTo('about')">About / Contact</a></li>
       <li><a data-page="staff" onclick="goTo('staff')">Staff</a></li>
+      <li><a onclick="goToDonate()">Donate</a></li>
     </ul>
   </div>
 </header>
@@ -241,6 +242,17 @@ body { min-height: 100vh; }
       <div>
         <div class="mission__media"><img src="${MARK_URI}" alt="Don't Quit Productions"></div>
         <div class="mission__stats">${statsHTML}</div>
+      </div>
+    </div>
+  </section>
+
+  <section id="home-donate">
+    <div class="wrap">
+      <div class="pitch-box pitch-box--support">
+        <span class="eyebrow">${site.supportEyebrow}</span>
+        <h3>${site.supportTitle}</h3>
+        <p>${site.supportBody}</p>
+        <button class="btn btn-red" onclick="previewNote()">${site.supportButtonLabel}</button>
       </div>
     </div>
   </section>
@@ -400,6 +412,14 @@ function goTo(page) {
   document.querySelectorAll('.nav__links a').forEach(function(a){ a.classList.toggle('is-active', a.dataset.page === page); });
   document.querySelector('.nav__links').classList.remove('is-open');
   window.scrollTo({ top: 0, behavior: 'instant' });
+}
+
+function goToDonate() {
+  goTo('home');
+  document.querySelector('.nav__links').classList.remove('is-open');
+  setTimeout(function() {
+    document.getElementById('home-donate').scrollIntoView({ behavior: 'smooth' });
+  }, 50);
 }
 
 let toastTimer;
